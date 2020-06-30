@@ -15,9 +15,18 @@ const Home: NextPage = () => {
           <a>Next js sample!</a>
         </h1>
         <div>
-          <Link href='/posts/old'>
-            <a>to getInitialProps</a>
-          </Link>
+          <ul>
+            <li>
+              <Link href='/posts/old'>
+                <a>to getInitialProps</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/posts/staticProps'>
+                <a>to getStaticProps</a>
+              </Link>
+            </li>
+          </ul>
         </div>
       </main>
     </div >
