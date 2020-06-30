@@ -26,6 +26,11 @@ const Home: NextPage = () => {
                 <a>to getStaticProps</a>
               </Link>
             </li>
+            <li>
+              <Link href='/posts/serverSide'>
+                <a>to getServerSideProps</a>
+              </Link>
+            </li>
           </ul>
         </div>
       </main>
