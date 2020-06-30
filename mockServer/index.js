@@ -2,32 +2,37 @@ const { ApolloServer, gql } = require("apollo-server");
 
 // スキーマを定義する
 const typeDefs = gql`
-  type Book {
-    title: String
-    author: String
+  type User {
+    id: ID!
+    name: String
   }
 
   type Query {
-    books: [Book]
+    users: [User!]
+    userById(id: ID!): User
   }
 `;
 
 // クエリで取得するデータを定数で置いておく
-const books = [
+const users = [
   {
-    title: "Harry Potter and the Chamber of Secrets",
-    author: "J.K. Rowling"
+    id: "1",
+    name: "Alice"
   },
   {
-    title: "Jurassic Park",
-    author: "Michael Crishton"
+    id: "2",
+    name: "Bob"
   }
 ];
 
 // booksクエリ発行時の処理を指定する
 const resolvers = {
   Query: {
-    books: () => books
+    users: () => users,
+    userById: (_parent, arg, _ctx, _info) => {
+        const user = users.find(e => e.id === arg.id);
+        return user;
+    }
   }
 };
 
