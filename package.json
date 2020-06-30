@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build & next export",
+    "export": "next build && next export",
     "serve": "serve -p 3003 ./out",
     "apollo:mock": "node ./mockServer/index.js"
   },
